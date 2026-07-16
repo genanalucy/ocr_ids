@@ -1,0 +1,27 @@
+seed: 42
+output_dir: ${OCR_IDS_RUNS_ROOT}/smoke
+
+data:
+  train_manifest: ${OCR_IDS_DATA_ROOT}/processed/smoke_render/manifest.jsonl
+  validation_manifest: ${OCR_IDS_DATA_ROOT}/processed/smoke_render/manifest.jsonl
+  image_size: 224
+
+model:
+  encoder_name: vit_small_patch14_dinov2.lvd142m
+  pretrained: true
+  encoder_checkpoint: null
+  decoder_dim: 384
+  decoder_layers: 1
+  decoder_heads: 6
+  max_length: 32
+
+training:
+  batch_size: 4
+  epochs: 1
+  learning_rate: 0.0001
+  weight_decay: 0.05
+  num_workers: 2
+  precision: bf16
+  gradient_accumulation_steps: 1
+  log_every: 1
+
