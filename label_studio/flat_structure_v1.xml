@@ -24,8 +24,8 @@
     placeholder="可登录 Unicode 时填单字；未登录则留空" />
   <TextArea name="ids" toName="image" value="$ids_hint" required="false"
     placeholder="仅填写扁平 IDS，例如 ⿰日月；包围/嵌套请选超出范围" />
-  <TextArea name="component_1_name" toName="image" required="false" placeholder="部件 1，例如 讠、木、艹" />
-  <TextArea name="component_2_name" toName="image" required="false" placeholder="部件 2，例如 只、莫、田" />
-  <TextArea name="component_3_name" toName="image" required="false" placeholder="部件 3，仅 ⿲/⿳ 使用" />
+  <TextArea name="component_1_name" toName="image" value="$component_1_hint" required="false" placeholder="部件 1，例如 讠、木、艹" />
+  <TextArea name="component_2_name" toName="image" value="$component_2_hint" required="false" placeholder="部件 2，例如 只、莫、田" />
+  <TextArea name="component_3_name" toName="image" value="$component_3_hint" required="false" placeholder="部件 3，仅 ⿲/⿳ 使用" />
   <TextArea name="note" toName="image" required="false" placeholder="异体、字形来源、疑点或修订理由" />
 </View>
