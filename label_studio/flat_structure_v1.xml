@@ -14,11 +14,18 @@
     <Choice value="top_middle_bottom" alias="上中下（⿳）" />
     <Choice value="out_of_scope" alias="包围/嵌套/其他" />
   </Choices>
+  <Header value="对一期内样本：先框部件，再填写部件名称。部件 1/2/3 的顺序与 IDS 子节点顺序一致：左→右或上→下。" />
+  <RectangleLabels name="component_boxes" toName="image" strokeWidth="2">
+    <Label value="component_1" alias="部件 1" background="#1E88E5" />
+    <Label value="component_2" alias="部件 2" background="#43A047" />
+    <Label value="component_3" alias="部件 3（仅三分结构）" background="#FB8C00" />
+  </RectangleLabels>
   <TextArea name="character" toName="image" value="$character_hint" required="false"
     placeholder="可登录 Unicode 时填单字；未登录则留空" />
   <TextArea name="ids" toName="image" value="$ids_hint" required="false"
     placeholder="仅填写扁平 IDS，例如 ⿰日月；包围/嵌套请选超出范围" />
-  <TextArea name="components" toName="image" value="$components_hint" required="false"
-    placeholder="按视觉顺序填写部件，以空格分隔，例如 日 月" />
+  <TextArea name="component_1_name" toName="image" required="false" placeholder="部件 1，例如 讠、木、艹" />
+  <TextArea name="component_2_name" toName="image" required="false" placeholder="部件 2，例如 只、莫、田" />
+  <TextArea name="component_3_name" toName="image" required="false" placeholder="部件 3，仅 ⿲/⿳ 使用" />
   <TextArea name="note" toName="image" required="false" placeholder="异体、字形来源、疑点或修订理由" />
 </View>
