@@ -1,0 +1,24 @@
+<View>
+  <Header value="一期：扁平方块字结构标注" />
+  <Image name="image" value="$image" zoom="true" />
+  <Choices name="input_quality" toName="image" choice="single" required="true" showInLine="true">
+    <Choice value="complete_clear" alias="完整清晰" />
+    <Choice value="complete_degraded" alias="完整但退化" />
+    <Choice value="partial_or_multiple" alias="截断或多字" />
+    <Choice value="unreadable" alias="不可判定" />
+  </Choices>
+  <Choices name="structure" toName="image" choice="single" required="true" showInLine="true">
+    <Choice value="left_right" alias="左右（⿰）" />
+    <Choice value="top_bottom" alias="上下（⿱）" />
+    <Choice value="left_middle_right" alias="左中右（⿲）" />
+    <Choice value="top_middle_bottom" alias="上中下（⿳）" />
+    <Choice value="out_of_scope" alias="包围/嵌套/其他" />
+  </Choices>
+  <TextArea name="character" toName="image" value="$character_hint" required="false"
+    placeholder="可登录 Unicode 时填单字；未登录则留空" />
+  <TextArea name="ids" toName="image" value="$ids_hint" required="false"
+    placeholder="仅填写扁平 IDS，例如 ⿰日月；包围/嵌套请选超出范围" />
+  <TextArea name="components" toName="image" value="$components_hint" required="false"
+    placeholder="按视觉顺序填写部件，以空格分隔，例如 日 月" />
+  <TextArea name="note" toName="image" required="false" placeholder="异体、字形来源、疑点或修订理由" />
+</View>
