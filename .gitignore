@@ -1,0 +1,25 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Large/reproducible artifacts
+data/raw/
+data/interim/
+data/processed/
+data/images/
+checkpoints/
+runs/
+outputs/
+samples/
+remote.env
+
+# Keep directory placeholders
+!data/**/.gitkeep
