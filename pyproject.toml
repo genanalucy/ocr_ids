@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ocr-ids"
+version = "0.1.0"
+description = "Open-set square-character image to Ideographic Description Sequence research toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "ocr-ids contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+data = [
+  "fonttools>=4.53",
+  "pillow>=10.3",
+  "pyyaml>=6.0",
+  "tqdm>=4.66",
+]
+train = [
+  "fonttools>=4.53",
+  "pillow>=10.3",
+  "pyyaml>=6.0",
+  "tqdm>=4.66",
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "timm>=1.0",
+]
+web = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "python-multipart>=0.0.9",
+  "pillow>=10.3",
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "timm>=1.0",
+]
+dev = [
+  "fonttools>=4.53",
+  "pillow>=10.3",
+  "pyyaml>=6.0",
+  "tqdm>=4.66",
+  "pytest>=8.2",
+  "ruff>=0.5",
+]
+
+[project.scripts]
+ocr-ids = "ocr_ids.cli:main"
+ocr-ids-web = "ocr_ids.web:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ocr_ids"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
