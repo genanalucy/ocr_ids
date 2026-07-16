@@ -1,0 +1,24 @@
+seed: 42
+output_dir: outputs/mvp
+
+data:
+  train_manifest: data/processed/splits/train.jsonl
+  validation_manifest: data/processed/splits/validation.jsonl
+  image_size: 224
+
+model:
+  encoder_name: vit_small_patch14_dinov2.lvd142m
+  pretrained: true
+  encoder_checkpoint: null
+  decoder_dim: 384
+  decoder_layers: 6
+  decoder_heads: 6
+  max_length: 128
+
+training:
+  batch_size: 32
+  epochs: 20
+  learning_rate: 0.0001
+  weight_decay: 0.05
+  num_workers: 4
+  log_every: 50
