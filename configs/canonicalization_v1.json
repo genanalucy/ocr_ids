@@ -1,0 +1,6 @@
+{
+  "version": "canonicalization-v1",
+  "description": "Conservative automatic corpus for the first phase. No expert mappings are applied; non-strict IDS terminals and non-Han target characters are routed to the review queue.",
+  "leaf_aliases": {}
+}
+
