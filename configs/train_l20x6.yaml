@@ -1,0 +1,28 @@
+seed: 42
+output_dir: ${OCR_IDS_RUNS_ROOT}/dinov2_vits_ids_v1
+
+data:
+  train_manifest: ${OCR_IDS_DATA_ROOT}/processed/rendered-v1/train/train.jsonl
+  validation_manifest: ${OCR_IDS_DATA_ROOT}/processed/rendered-v1/validation/manifest.jsonl
+  image_size: 224
+
+model:
+  encoder_name: vit_small_patch14_dinov2.lvd142m
+  pretrained: true
+  # Set a remote path here for fully offline training; it takes priority over pretrained.
+  encoder_checkpoint: null
+  decoder_dim: 384
+  decoder_layers: 6
+  decoder_heads: 6
+  max_length: 128
+
+training:
+  # Per GPU. Effective batch = 96 × 6 = 576.
+  batch_size: 96
+  epochs: 40
+  learning_rate: 0.0003
+  weight_decay: 0.05
+  num_workers: 8
+  precision: bf16
+  gradient_accumulation_steps: 1
+  log_every: 20
